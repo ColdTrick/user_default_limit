@@ -3,7 +3,7 @@
 	"description": "Adds the ability for users to configure a default list limit",
 	"type": "elgg-plugin",
 	"keywords": ["elgg", "plugin", "user_default_limit"],
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"support": {
 		"source": "https://github.com/ColdTrick/user_default_limit",
 		"issues": "https://github.com/ColdTrick/user_default_limit/issues"
@@ -14,5 +14,8 @@
 	"require-dev": {
 		"coldtrick/sniffs": "dev-master",
 		"coldtrick/releases": "dev-master"
+	},
+	"conflict": {
+		"elgg/elgg": "<3.0"
 	}
 }
