@@ -1,9 +1,6 @@
 <?php
 /**
- * Provide a way of setting your language prefs
- *
- * @package Elgg
- * @subpackage Core
+ * Provide a way of setting a personal
  */
 
 $user = elgg_get_page_owner_entity();
@@ -20,10 +17,13 @@ if (!in_array($value, $options)) {
 }
 
 $title = elgg_echo('user_default_settings:settings:title');
-$content = elgg_echo('user_default_settings:settings:label') . ': ';
-$content .= elgg_view("input/select", array(
+
+$content = elgg_view_field([
+	'#type' => 'select',
+	'#label' => elgg_echo('user_default_settings:settings:label'),
 	'name' => 'user_default_limit',
 	'value' => $value,
-	'options' => $options
-));
+	'options' => $options,
+]);
+
 echo elgg_view_module('info', $title, $content);
