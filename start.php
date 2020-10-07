@@ -9,7 +9,7 @@ elgg_register_event_handler('init', 'system', 'user_default_limit_init');
  * @return void
  */
 function user_default_limit_init() {
-	if (!elgg_is_logged_in()) {
+	if (!elgg_is_logged_in() || elgg_in_context('admin')) {
 		return;
 	}
 	
